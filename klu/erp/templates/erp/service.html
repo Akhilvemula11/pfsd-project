@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Online Consultancy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fbeee6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #FF338D ;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: #4AB3E7;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            background-color: #4AB3E7;
+        }
+
+        /* Services section */
+        .services-container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .service {
+            margin-bottom: 30px;
+        }
+
+        .service h3 {
+            font-size: 22px;
+            color: #4AB3E7;
+        }
+
+        .service p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #FF338D;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+{{service| crispy}}
+    <!-- Header -->
+    <header>
+        Welcome to Online Consultancy
+        <nav>
+            <a href="http://127.0.0.1:8000">Home</a>
+            <a href="services.html">Services</a>
+            <a href="http://127.0.0.1:8000/contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Services Section -->
+    <div class="services-container">
+        <h2>Our Services</h2>
+
+        <div class="service">
+            <h3>1. Virtual Consultation </h3>
+            <p>-->General Practitioner Consultations: For common illnesses like colds, flu, headaches, minor infections, etc.
+<br>-->Specialist Consultations: For more specialized conditions (dermatologists, cardiologists, gynecologists, etc.).</p>
+        </div>
+
+        <div class="service">
+            <h3>2. Medical Advice and Health Information</h3>
+            <p>-->General health consultations and advice for lifestyle changes, nutrition, weight management, and disease prevention.
+<br>-->Health Education: Providing reliable information on various medical conditions and treatments.</p>
+        </div>
+
+        <div class="service">
+            <h3>3.  Lab Test Orders and Results</h3>
+            <p>-->Ordering laboratory tests remotely.
+<br>-->Results Interpretation: Reviewing and explaining lab results during virtual consultations.</p>
+        </div>
+
+        <div class="service">
+            <h3>4. Emergency Consultation</h3>
+            <p>-->Immediate online consultations for non-critical emergencies to determine the next steps.
+<br>-->Advice on whether urgent care is needed or if the issue can be treated at home.</p>
+        </div>
+
+    <div class="service">
+            <h3>5. Diagnostic Referrals</h3>
+        <p>-->Referrals to diagnostic centers for advanced tests like X-rays, MRIs, and CT scans.
+<br>Recommendations for in-person consultations if necessary.</p>
+        </div>
+
+    <div class="service">
+            <h3>6. Specialized Telemedicine Service</h3>
+            <p>-->Teledermatology: Remote diagnosis and treatment of skin conditions using images and video.
+<br>-->Teleophthalmology: Eye health consultations using vision tests and photos of the eyes.
+<br>-->Teledentistry: Consultations for oral health and dental problems.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Online Consultancy. All rights reserved. | Contact: +91 79989 93222
+    </footer>
+
+</body>
+</html>

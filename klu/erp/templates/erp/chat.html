@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fbeee6;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Home button */
+        .home-button {
+            color: white;
+            text-decoration: none;
+            padding: 8px 25px;
+            background-color: #4AB3E7;
+            border-radius: 8px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background-color: #3A9BCD;
+        }
+
+        /* Chatbox container */
+        .chatbot-container {
+            width: 800px;
+            position: fixed;
+            bottom: 0;
+            right: 90px;
+            left: 250px;
+            background-color: white;
+            border: 2px solid #edbb99;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header of the chatbot */
+        .chatbot-header {
+            background-color: #fbeee6;
+            color: Black;
+            padding: 15px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        /* Chat area */
+        .chat-area {
+            height: 400px;
+            padding: 10px;
+            overflow-y: scroll;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* Input area */
+        .chat-input-area {
+            padding: 10px;
+            display: flex;
+        }
+
+        /* Input field */
+        .chat-input {
+            width: 80%;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Send button */
+        .chat-send {
+            width: 20%;
+            background-color: #4AB3E7;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        /* Chat messages */
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+
+        .bot-message {
+            text-align: left;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="home-button" onclick="location.href='http://127.0.0.1:8000/'">Home</button>
+    </nav>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            DOCTOR CONSULTATION-CHATBOT
+        </div>
+        <div class="chat-area" id="chat-area">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" class="chat-input" placeholder="Type a message...">
+            <button class="chat-send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Predefined bot responses
+        const botResponses = {
+            "hello": "Hi! How can I assist you today?",
+            "book": "You can book an online consultation by visiting the booking page.",
+            "services": "We offer medical consultancy services, including doctors.",
+            "contact": "You can reach us at contact@consultancy.com or call +91 79989 93222.",
+            "thank you": "You're welcome! Feel free to ask if you need more help."
+        };
+
+        // Function to display messages in the chat
+        function displayMessage(message, sender) {
+            const chatArea = document.getElementById("chat-area");
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("chat-message");
+            messageDiv.classList.add(sender === "user" ? "user-message" : "bot-message");
+            messageDiv.textContent = message;
+            chatArea.appendChild(messageDiv);
+            chatArea.scrollTop = chatArea.scrollHeight; // Scroll to bottom
+        }
+
+        // Function to handle user input and bot response
+        function sendMessage() {
+            const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+            if (userInput) {
+                // Display user message
+                displayMessage(userInput, "user");
+                document.getElementById("userInput").value = "";
+
+                // Check for bot response
+                setTimeout(() => {
+                    if (botResponses[userInput]) {
+                        displayMessage(botResponses[userInput], "bot");
+                    } else {
+                        displayMessage("Sorry, I don't understand. Please ask something else.", "bot");
+                    }
+                }, 500); // Simulate a brief delay for bot response
+            }
+        }
+    </script>
+</body>
+</html>

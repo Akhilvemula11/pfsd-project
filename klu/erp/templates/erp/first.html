@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Online Consultation Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fbeee6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #FF338D;
+            color: white;
+            padding: 0px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation links */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #4AB3E7;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #4AB3E7;
+            color: white
+        }
+
+        /* Footer styling */
+        footer {
+            width: 100%;
+            background-color: #FF338D;
+            padding: 0px;
+            color: white;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            border: 2px solid #4AB3E7;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            width: 300px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .login-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .login-container input:focus {
+            border-color: #4AB3E7;
+        }
+
+        .login-button {
+            width: 100%;
+            background-color: #4AB3E7;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-button:hover {
+            background-color: #d4a373;
+
+        }
+
+        .login-container p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .login-container a {
+            color: #4AB3E7;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+{{first| crispy}}
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Online Consultancy</h1>
+        <nav> <a href="http://127.0.0.1:8000">Home</a>
+    </nav>
+    </header>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h1>User Login</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+             <input type="text" name="username" placeholder="Enter username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <nav><a href="http://127.0.0.1:8000/doc">Login</a></nav>
+
+        </form>
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+        <p> <a href="http://127.0.0.1:8000/login">Doctor login</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Online Consultation Platform. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

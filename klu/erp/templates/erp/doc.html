@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #fbeee6;
+        }
+        h1 {
+            text-align: center;
+            color: black;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #4AB3E7;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .faq-section {
+            width: 50%;
+            margin: 0 auto;
+        }
+        .faq {
+            background-color: #FF338D;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .faq-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .faq-header .toggle {
+            font-size: 24px;
+            color: #007BFF;
+        }
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+        .container {
+            width: 40%;
+            max-width: 200px;
+            margin:  0 auto;
+            padding: 5px 0;
+        }
+
+        .about-section {
+            background-color: #fbeee6;
+            padding: 5px 10px;
+        }
+
+        .about-content {
+            text-align: center;
+        }
+
+        .about-content h1 {
+            color: #fbeee6;
+        }
+
+        .about-content p {
+            color: #555;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .team-section {
+            padding: 1px 2px;
+            background-color:#fbeee6 ;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            width: 250px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .team-member img {
+            border-radius: 40%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+
+    </style>
+</head>
+<body>
+{{doc| crispy}}
+    <h1>Find a Doctor </h1>
+
+   <form action="" method="post">
+       {% csrf_token %}
+    <div class="faq-section">
+        <div class="faq">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <h3>GENERAL PHYSICIAN CONSULTATION</h3>
+                <span class="toggle">+</span>
+            </div>
+            <div class="faq-content">
+                <p>
+                    <section class="team-section">
+                    <div class="team-container">
+                        <div class="container">
+                            <h2>Meet Our Experts</h2>
+                            <div class="team-grid">
+                                <!-- Team Member 1 -->
+                                <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-1.jpg' %}" alt="My Static Image" style="width: 80%; height: auto;"/>
+                                    <h3>Dr.Rohit Sharma</h3>
+
+                                      <p>  MBBS, MD - DVL,Msc
+                                      </p><p>7 years of Experience</p>
+                                    <h3> AVALIABILITY: 9am-10pm </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+                <nav><a href="http://127.0.0.1:8000/book">BOOK-CONSULTATION</a></nav>
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <h3>PSYCHIATRIST CONSULTATION</h3>
+                <span class="toggle">+</span>
+            </div>
+            <div class="faq-content">
+                <p>
+                    <section class="team-section">
+                        <div class="container">
+                            <h2>Meet Our Expert</h2>
+                            <div class="team-grid">
+                                <!-- Team Member 1 -->
+                                <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-2.jpg' %}" alt="My Static Image" style="width: 70%; height: auto;"/>
+                                    <h3>Dr. Shyam Sunder</h3>
+                                    <p>MBBS,Msc psychologist
+                                    <br> 5+ years experience </p>
+                                    <h3>AVALIABLITY: FRI-MON <br>7am-9pm</h3>
+                                </div>
+                                <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-2.2.jpg' %}" alt="My Static Image" style="width: 65%; height: auto;"/>
+                                    <h3>Dr.Ayurveda Sree </h3>
+                                    <p>MBBS ,MD, psychologist
+                                    <br>3 years experience</p>
+                                     <h3>AVALIABILITY:  MON-THU 10am-9pm</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <nav><a href="http://127.0.0.1:8000/book">BOOK-CONSULTATION</a></nav>
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <h3> Ear-Nose-Tongue CONSULTATION</h3>
+                <span class="toggle">+</span>
+            </div>
+            <div class="faq-content">
+                <p>
+                    <section class="team-section">
+                        <div class="container">
+                            <h2>Meet Our Expert</h2>
+                            <div class="team-grid">
+                                <!-- Team Member 1 -->
+                                <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-3.jpg' %}" alt="My Static Image" style="width: 60%; height: auto;"/>
+                                    <h3>Dr.Ruhini Sharma</h3>
+                                    <p>MBBS ,MS ENT
+                                    <br> 3 years of experience</p>
+                                    <h3>AVALIABILITY: MON-SAT
+                                        <br>7am-10pm</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <nav><a href="http://127.0.0.1:8000/book">BOOK-CONSULTATION</a></nav>
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <h3>DERMATOLOGY</h3>
+                <span class="toggle">+</span>
+            </div>
+            <div class="faq-content">
+                <p>
+                    <section class="team-section">
+                        <div class="container">
+                            <h2>Meet Our Expert</h2>
+                            <div class="team-grid">
+                                <!-- Team Member 1 -->
+                                <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-4.jpg' %}" alt="My Static Image" style="width: 60%; height: auto;"/>
+                                    <h3>Dr.Arun Bhaskar</h3>
+
+                                      <p>MBBS,PG - Dermatologist
+                                       </p>
+                                    <h3> AVALIABILITY: MON-SAT
+                                        <br>8am-8pm</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <nav><a href="http://127.0.0.1:8000/book">BOOK-CONSULTATION</a></nav>
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <h3>WEIGHT MANAGEMENT CONSULTATION</h3>
+                <span class="toggle">+</span>
+            </div>
+            <div class="faq-content">
+                <p>
+                    <section class="team-section">
+                        <div class="container">
+                            <h2>Meet Our Expert</h2>
+                            <div class="team-grid">
+                                <!-- Team Member 1 -->
+                                <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-6.png' %}" alt="My Static Image" style="width: 60%; height: auto;"/>
+                                    <h3>Dr. Lilly</h3>
+                                    <p>MBBS, Msc Endocrinologist</p>
+                                    <h3>AVALIABILITY: MON-FRI
+                                        <br>9am-6pm</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <nav><a href="http://127.0.0.1:8000/book">BOOK-CONSULTATION</a></nav>
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-header" onclick="toggleFAQ(this)">
+                <h3> PREGNANCY CONSULTATION</h3>
+                <span class="toggle">+</span>
+            </div>
+          <div class="faq-content">
+                <p>
+                    <section class="team-section">
+                        <div class="container">
+                            <h2>Meet Our Expert</h2>
+                            <div class="team-grid">
+                                <!-- Team Member 1 -->
+                                <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-5.jpg' %}" alt="My Static Image" style="width: 60%; height: auto;"/>
+                                    <h3>Dr. Sathwika</h3>
+                                    <p>MBBS ,MD, Gynecologist
+                                      <br>6 years of experience
+                                    </p>
+                                    <h3>AVALIABILITY:  MON-THU
+                                        <br>9am-10pm</h3>
+                                </div>
+                                 <div class="team-member">
+                                    {% load static %}
+                                     <img src="{% static 'erp/images/doc-5.1.jpg' %}" alt="My Static Image" style="width: 60%; height: auto;"/>
+                                    <h3>Dr. Meghana</h3>
+                                    <p>MBBS ,MD , Gynecologist
+                                    <br>5+ years experience</p>
+                                     <h3>AVALIABILITY:  FRI-SUN
+                                         <br>10am-9pm</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <nav><a href="http://127.0.0.1:8000/book">BOOK-CONSULTATION</a></nav>
+                </p>
+            </div>
+        </div>
+    </div>
+       </form>
+
+    <script>
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling;
+            const toggleSign = element.querySelector('.toggle');
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                toggleSign.textContent = "-";
+            } else {
+                content.style.display = "none";
+                toggleSign.textContent = "+";
+            }
+        }
+    </script>
+      <nav><a href="http://127.0.0.1:8000">Home</a></nav>
+</body>
+</html>

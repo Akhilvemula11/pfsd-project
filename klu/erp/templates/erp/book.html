@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Booking - Online Consultation Service</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fbeee6;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header, footer {
+            background-color: #FF338D;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0; /* Smaller header/footer */
+            font-size: 16px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px; /* Smaller nav links */
+            background-color: #4AB3E7;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #4AB3E7;
+        }
+
+        /* Main Booking Section */
+        .booking-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .booking-form label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .booking-form input, .booking-form select, .booking-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .booking-form button {
+            padding: 12px;
+            background-color: #4AB3E7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .booking-form button:hover {
+            background-color:#4AB3E7 ;
+        }
+
+        footer p {
+            margin: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .booking-section {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+{{book|crispy}}
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Welcome to Online Consultancy</h1>
+            <nav>
+                <a href="http://127.0.0.1:8000">Home</a>
+                <a href="http://127.0.0.1:8000/service">Services</a>
+                <a href="http://127.0.0.1:8000/register">Book Now</a>
+                <a href="http://127.0.0.1:8000/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <h2>Book a Consultation</h2>
+        <form class="booking-form" action="#" method="POST">
+            <!-- Name -->
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <!-- Email -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- Phone -->
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <!-- Consultation Type -->
+            <label for="consultation-type">Consultation Type</label>
+            <select id="consultation-type" name="consultation-type" required>
+                <option value="" disabled selected>Select consultation type</option>
+                <option value="psychologist">GENERAL PHYSICIAN</option>
+                <option value="financial-consultant">PSYCHIATRIST</option>
+                <option value="career-coach">E-N-T Consultation</option>
+                <option value="psychologist">DERMATOLOGY</option>
+                <option value="psychologist">WEIGHT MANAGEMENT</option>
+                <option value="psychologist"> PREGNANCY CONSULTATION</option>
+            </select>
+
+            <!-- Date -->
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <!-- Time -->
+            <label for="time">Preferred Time</label>
+            <input type="time" id="time" name="time" required>
+
+            <!-- Additional Notes -->
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Any specific details you want to share?"></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Book Consultation</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Online Consultancy. All rights reserved. | Contact: +91 79989 93222</p>
+        </div>
+    </footer>
+
+</body>
+</html>

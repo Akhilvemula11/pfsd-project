@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fbeee6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        header {
+            background-color: #FF338D;
+            color: white;
+            padding: 0px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation links */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #4AB3E7;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #4AB3E7;
+        }
+
+        /* Footer styling */
+        footer {
+            width: 100%;
+            background-color: #FF338D;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: black;
+
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border:1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            background-color: #f5cba7;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: default;
+        }
+        .login-container button:hover {
+            background-color: white;
+        }
+        .login-container a {
+            color: #4AB3E7;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .social-login {
+            margin-top: 20px;
+        }
+        .social-login img {
+            width: 30px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+{{login| crispy}}
+<header>
+        <div class="container">
+            <h1>Welcome to Online Consultancy</h1>
+            <nav>
+                <a href="http://127.0.0.1:8000">Home</a>
+            </nav>
+        </div>
+    </header>
+    <div class="login-container">
+        <h1>Dr.Login</h1>
+        <form action="" method="post">
+
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <nav><a href="http://127.0.0.1:8000/prof">Login</a></nav>
+            <a href="#">Forgot password?</a>
+        </form>
+
+        <p> Not Have account yet? <a href="http://127.0.0.1:8000/register">Register here</a></p>
+
+    </div>
+<footer>
+        &copy; 2024 Online Consultancy. All rights reserved. | Contact: +91 79989 93222
+    </footer>
+</body>
+</html>

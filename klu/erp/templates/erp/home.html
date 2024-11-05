@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Consultancy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fbeee6 ; /* Simple background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #FF338D;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation links */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #4AB3E7;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #4AB3E7;
+        }
+
+        /* Main content */
+        .content {
+            padding: 90px 0px;
+            text-align: center;
+        }
+        .center-align {
+            text-align: center;
+
+        }
+
+        .center-button {
+            background-color: #4AB3E7;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .center-button:hover {
+            background-color: #45a049;
+        }
+
+
+        /* Footer styling */
+        .footer {
+            background-color: #FF338D;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 15px;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Adding gap below the Book Consult button */
+        .book-consult-container {
+            margin-bottom: 50px; /* Adds 50px space between button and footer */
+        }
+    </style>
+</head>
+<body>
+    {{home| crispy}}
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Online Consultancy</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="http://127.0.0.1:8000/about">About Us</a>
+            <a href="http://127.0.0.1:8000/contact">Contact</a>
+            <a href="http://127.0.0.1:8000/service">Services</a>
+            <a href="http://127.0.0.1:8000/first">Login</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="content">
+
+        {% load static %}
+        <img src="{% static 'erp/images/pf.jpg' %}" alt="My Static Image" style="width: 95%; height: auto;"/>
+    </div>
+
+    <h1 class="center-align">Home Section</h1>
+    <p class="center-align"><br>Welcome to our consultancy platform. We are here to provide expert advice for all your needs.</p>
+
+    <h1 class="center-align">About Us</h1>
+    <p class="center-align">We are a team of professionals offering doctor consultancy services in various fields.</p>
+
+    <h1 class="center-align">Contact</h1>
+    <p class="center-align">Feel free to reach out to us for any queries or further information.</p>
+
+    <h1 class="center-align">Register</h1>
+    <p class="center-align">Sign up to get personalized doctor consultancy services.</p>
+
+    <h1 class="center-align">Chat Bot</h1>
+    <p class="center-align">For more information and Queries consult our ChatBot.</p>
+
+    <div class="book-consult-container">
+        <nav>
+            <a href="http://127.0.0.1:8000/chat">C H A T-B O T</a>
+        </nav>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            &copy; 2024 Online Consultancy. All rights reserved. | Contact: +91 79989 93222
+        </div>
+    </footer>
+
+</body>
+</html>

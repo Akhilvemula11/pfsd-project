@@ -1,0 +1,15 @@
+h3{
+    text-align: center;
+    color:blue;
+}
+h1{
+    text-align:center
+}
+#navbar{
+    background-color:red;
+    text-align:center;
+
+}
+#navbar a:hover{
+    color:green;
+}

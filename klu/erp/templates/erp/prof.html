@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FF338D;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .profile-info {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .profile-info h1 {
+            margin: 0;
+        }
+        .rating {
+            font-size: 18px;
+            color: #FFD700;
+            margin-top: 10px;
+        }
+        .experience, .timetable, .patients-today {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .patients-today {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .patients-today input[type="number"] {
+            width: 60px;
+            padding: 8px;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .patients-today button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color:#4AB3E7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .patients-today button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>--Doctor Profile--</h1>
+        </div>
+
+        <div class="profile">
+
+            <div class="profile-info">
+                <h1>Dr. Rohit Sharma</h1>
+                <p>General Physician, Children Specialist</p>
+                <div class="rating">
+                    Rating: ★★★★☆ (4.5)
+                </div>
+            </div>
+        </div>
+
+        <div class="experience">
+            <h2>Experience</h2>
+            <p>Dr. Rohit Sharma has over 7 years of experience in the medical field, specializing in treating children with a compassionate and kind-hearted approach. He has successfully treated hundreds of patients and is known for his attention to detail.</p>
+        </div>
+
+        <div class="timetable">
+            <h2>Doctor Timetable</h2>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Morning Shift</th>
+                    <th>Evening Shift</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>9:00 AM - 12:00 PM</td>
+                    <td>4:00 PM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>9:00 AM - 12:00 PM</td>
+                    <td>4:00 PM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>9:00 AM - 12:00 PM</td>
+                    <td>4:00 PM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>9:00 AM - 12:00 PM</td>
+                    <td>4:00 PM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>9:00 AM - 12:00 PM</td>
+                    <td>4:00 PM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>10:00 AM - 1:00 PM</td>
+                    <td>4:00 PM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="patients-today">
+            <h2>Today's Patients Count</h2>
+            <label for="patients-count">Number of patients:</label>
+            <input type="number" id="patients-count" name="patients-count" min="0" value="0">
+            <button type="button" onclick="alert('Patients count updated!')">Update</button>
+        </div>
+        <p><a href="http://127.0.0.1:8000">Home</a></p>
+    </div>
+
+</body>
+</html>
